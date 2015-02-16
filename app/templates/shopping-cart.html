@@ -1,0 +1,68 @@
+﻿<div class="goods-page">
+    <div class="goods-data clearfix">
+        <div class="table-wrapper-responsive">
+            <table summary="Shopping cart">
+                <tr>
+                    <th class="goods-page-image">Image</th>
+                    <th class="goods-page-description">Description</th>
+                    <th class="goods-page-ref-no">Ref No</th>
+                    <th class="goods-page-quantity">Quantity</th>
+                    <th class="goods-page-price">Unit price</th>
+                    <th class="goods-page-total" colspan="2">Total</th>
+                </tr>
+                <tr ng-repeat="cartItem in cart.$cart.items">
+                    <td class="goods-page-image">
+                        <a href="#/products/{{cartItem._id}}"><img src="{{cartItem._image}}" alt="{{cartItem._name}}"></a>
+                    </td>
+                    <td class="goods-page-description">
+                        <h3><a href="#/products/{{cartItem._id}}">{{cartItem._name}}</a></h3>
+                        <p><strong>Item 1</strong> - Color: Green; Size: S</p>
+                        <em>More info is here</em>
+                    </td>
+                    <td class="goods-page-ref-no">
+                        {{cartItem._id}}
+                    </td>
+                    <td class="goods-page-quantity">
+                        <div class="product-quantity">
+                            <input id="product-quantity" type="text" touch-spin-cart readonly class="form-control input-sm">
+                        </div>
+                    </td>
+                    <td class="goods-page-price">
+                        <strong>{{cartItem._price | nairacurrency}}</strong>
+                    </td>
+                    <td class="goods-page-total">
+                        <strong>{{cartItem.getTotal() | nairacurrency}}</strong>
+                    </td>
+                    <td class="del-goods-col">
+                        <a class="del-goods" href="#" ng-click="cart.removeItemById(cartItem._id)">&nbsp;</a>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="shopping-total">
+            <ul>
+                <li>
+                    <em>Sub total</em>
+                    <strong class="price">{{cart.getSubTotal() | nairacurrency}}</strong>
+                </li>
+                <li>
+                    <em>Shipping cost</em>
+                    <strong class="price">{{cart.getShipping() | nairacurrency}}</strong>
+                </li>
+
+                <li>
+                    <em>VAT {{cart.getTaxRate()}}%</em>
+                    <strong class="price">{{cart.getTax() | nairacurrency}}</strong>
+                </li>
+                <li class="shopping-total-price">
+                    <em>Total</em>
+                    <strong class="price">{{cart.totalCost() | nairacurrency}}</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <a class="btn btn-default" href="#/home">Continue shopping <i class="fa fa-shopping-cart"></i></a>
+    <button class="btn btn-primary" type="submit">Checkout <i class="fa fa-check"></i></button>
+</div>

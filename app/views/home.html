@@ -1,0 +1,89 @@
+﻿<div data-ng-include="'templates/slider.html'" ></div>
+    <div class="main">
+        <div class="container">
+            <!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
+            <div class="row margin-bottom-40">
+                <!-- BEGIN SALE PRODUCT -->
+                <div class="col-md-12 sale-product" ng-repeat="catProduct in products | toArray" ng-show="catProduct.length > 0">
+                    <h2 ng-bind="catProduct.$key.split('_')[0]"></h2>
+                    <div class="owl-carousel" owl-carousel options="options">
+                        <div ng-repeat="product in catProduct">
+                            <div class="product-item">
+                                <div class="pi-img-wrapper">
+                                    <img ng-src="{{product.image_Url}}" class="img-responsive" alt="{{product.name}}">
+                                    <div>
+                                        <a fancy-image-box href="{{product.image_Url}}" class="btn btn-default fancybox-button">Zoom</a>
+                                        <a fancy-box ng-click="openFancybox('templates/product-popup.html')" class="btn btn-default fancybox-fast-view">View</a>
+                                    </div>
+                                </div>
+                                <h3><a href="#/products/{{product.id}}">{{product.name}}</a></h3>
+                                <div class="pi-price">{{product.price | nairacurrency}}</div>
+                                <!--<a href="#" ng-click="addtocart(product)" class="btn btn-default add2cart">Add to cart</a>-->
+                                <add-to-cart product="product"></add-to-cart>
+
+                                <div class="sticker sticker-sale"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <br />
+                </div>
+                <!-- END SALE PRODUCT -->
+            </div>
+            <!-- END SALE PRODUCT & NEW ARRIVALS -->
+
+        </div>
+    </div>
+    <!-- BEGIN BRANDS -->
+    <div class="brands">
+        <div class="container">
+            <div class="owl-carousel owl-carousel6-brands">
+                <a href="shop-product-list.html"><img src="img/brands/canon.jpg" alt="canon" title="canon"></a>
+                <a href="shop-product-list.html"><img src="img/brands/esprit.jpg" alt="esprit" title="esprit"></a>
+                <a href="shop-product-list.html"><img src="img/brands/gap.jpg" alt="gap" title="gap"></a>
+                <a href="shop-product-list.html"><img src="img/brands/next.jpg" alt="next" title="next"></a>
+                <a href="shop-product-list.html"><img src="img/brands/puma.jpg" alt="puma" title="puma"></a>
+                <a href="shop-product-list.html"><img src="img/brands/zara.jpg" alt="zara" title="zara"></a>
+                <a href="shop-product-list.html"><img src="img/brands/canon.jpg" alt="canon" title="canon"></a>
+                <a href="shop-product-list.html"><img src="img/brands/esprit.jpg" alt="esprit" title="esprit"></a>
+                <a href="shop-product-list.html"><img src="img/brands/gap.jpg" alt="gap" title="gap"></a>
+                <a href="shop-product-list.html"><img src="img/brands/next.jpg" alt="next" title="next"></a>
+                <a href="shop-product-list.html"><img src="img/brands/puma.jpg" alt="puma" title="puma"></a>
+                <a href="shop-product-list.html"><img src="img/brands/zara.jpg" alt="zara" title="zara"></a>
+            </div>
+        </div>
+    </div>
+    <!-- END BRANDS -->
+    <!-- BEGIN STEPS -->
+    <div class="steps-block steps-block-red">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 steps-block-col">
+                    <i class="fa fa-truck"></i>
+                    <div>
+                        <h2>Free shipping</h2>
+                        <em>Express delivery withing 3 days</em>
+                    </div>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="col-md-4 steps-block-col">
+                    <i class="fa fa-gift"></i>
+                    <div>
+                        <h2>Daily Gifts</h2>
+                        <em>3 Gifts daily for lucky customers</em>
+                    </div>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="col-md-4 steps-block-col">
+                    <i class="fa fa-phone"></i>
+                    <div>
+                        <h2>477 505 8877</h2>
+                        <em>24/7 customer care available</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END STEPS -->
+

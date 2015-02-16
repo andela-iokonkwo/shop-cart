@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" data-ng-app="shopApp">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+<head>
+    <meta charset="utf-8">
+    <title>Shopping Cart App</title>
+    <base href="/" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="Shop  description" name="description">
+    <meta content="Shop keywords" name="keywords">
+    <meta content="shop" name="author">
+    <meta property="og:site_name" content="-CUSTOMER VALUE-">
+    <meta property="og:title" content="-CUSTOMER VALUE-">
+    <meta property="og:description" content="-CUSTOMER VALUE-">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+    <meta property="og:url" content="-CUSTOMER VALUE-">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Fonts START -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"><!--- fonts for slider on the index page -->
+    <!-- Fonts END -->
+
+    <!-- build:css({bower_components, app}) styles/app.css -->
+
+    <!-- Global styles START -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Global styles END -->
+    <!-- Page level plugin styles START -->
+    <link href="lib/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+    <link href="owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="layerslider/css/layerslider.css" rel="stylesheet">
+    <link href="angularjs-toaster/toaster.css" rel="stylesheet" />
+    <!-- Page level plugin styles END -->
+    <!-- Theme styles START -->
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-shop.css" rel="stylesheet" type="text/css">
+    <link href="css/style-layer-slider.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/themes/red.css" rel="stylesheet" id="style-color">
+
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- Theme styles END -->
+
+    <!-- endbuild -->
+</head>
+<!-- Head END -->
+<!-- Body BEGIN -->
+<body class="ecommerce">
+    <div ng-spinner-bar class="page-spinner-bar">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+
+    <div data-ng-include="'templates/top-bar.html'" ></div>
+
+    <header-page></header-page>
+
+    <toaster-container toaster-options="{'position-class': 'toast-top-full-width'}"></toaster-container>
+
+    <div ui-view class="fade-in-up"></div>
+
+    <footer-page></footer-page>
+    
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+
+  
+
+
+    <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+    <script src="jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery-migrate/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="scripts/back-to-top.js" type="text/javascript"></script>
+    <script src="jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN CORE ANGULARJS PLUGINS -->
+    <script src="angular/angular.min.js" type="text/javascript"></script>
+    <script src="angular-ui-router/release/angular-ui-router.min.js" type="text/javascript"></script>
+    <script src="angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="angular-file-upload/angular-file-upload.min.js" type="text/javascript"></script>
+    <script src="angular-animate/angular-animate.min.js" type="text/javascript"></script>
+    <script src="angularjs-toaster/toaster.js"></script>
+    <!-- END CORE ANGULARJS PLUGINS -->
+   
+
+    <!-- build:js({.tmp,app}) scripts/app.js -->
+    <!-- BEGIN APP LEVEL ANGULARJS SCRIPTS -->
+    <script src="js/controllers/admin.js"></script>
+    <script src="js/directives/cart.js"></script>
+    <script src="js/services/cart.js"></script>
+    <script src="js/directives/app.js"></script>
+    <script src="js/controllers/app.js"></script>
+    <script src="js/services/app.js"></script>
+    <script src="js/filter/app.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <!-- endbuild -->
+   
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="lib/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+    <script src='jquery-zoom/jquery.zoom.min.js' type="text/javascript"></script><!-- product zoom -->
+    <script src="bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script><!-- Quantity -->
+        <!-- END PAGE LEVEL JAVASCRIPTS -->
+
+    <!-- BEGIN LayerSlider -->
+    <script src="layerslider/js/greensock.js" type="text/javascript"></script><!-- External libraries: GreenSock -->
+    <script src="layerslider/js/layerslider.transitions.js" type="text/javascript"></script><!-- LayerSlider script files -->
+    <script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script><!-- LayerSlider script files -->
+    <!-- END LayerSlider -->
+
+
+   
+</body>
+<!-- END BODY -->
+</html>

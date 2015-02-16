@@ -1,0 +1,78 @@
+﻿<section class="panel panel-default table-dynamic">
+    <div class="panel-heading">
+        <strong><span class="glyphicon glyphicon-th"></span> Category : {{SelectedCategory}}</strong>
+       <i class="glyphicon glyphicon-remove pull-right" ng-click="cancel()"></i>
+    </div>
+    <div ng-show="selectedFiles == null">
+        <div class="file">
+            <label>Select an image to upload.</label>
+
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <div ng-file-select="onFileSelect($files)" data-multiple="false" title="select file"
+                         onclick="this.value = null" class="btn btn-primary" style="position: relative;">
+                        Select Image<input type="file" ng-file-select="onFileSelect($files)"
+                                           data-multiple="false" title="select file" onclick="this.value = null"
+                                           class="upload-button" multiple="false"
+                                           style="top: 0px; bottom: 0px; left: 0px; right: 0px; width: 100%; opacity: 0; position: absolute;">
+                    </div>
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <div ng-show="selectedFiles != null">
+        <div class="row" style="margin: 10px">
+            <div class="col-sm-6">
+
+                <img style="height: auto; width: 250px; margin-bottom: 20px" ng-src="{{dataUrls[0]}}" class="photo">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <div ng-file-select="onFileSelect($files)" data-multiple="false" title="select file"
+                             onclick="this.value = null" class="btn btn-primary" style="position: relative;">
+                            Change Image<input type="file" ng-file-select="onFileSelect($files)"
+                                               data-multiple="false" title="select file" onclick="this.value = null"
+                                               class="upload-button" multiple="false"
+                                               style="top: 0px; bottom: 0px; left: 0px; right: 0px; width: 100%; opacity: 0; position: absolute;">
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <p>
+                    <label>Name</label>
+                    <input ng-model="product.Name" type="text" class="form-control">
+                </p>
+                <p>
+                    <label>Price</label>
+                    <input ng-model="product.Price" type="text" class="form-control">
+                </p>
+                <p>
+                    <label>Discounted Price</label>
+                    <input ng-model="product.DiscountedPrice" type="text" class="form-control">
+                </p>
+                <p>
+                    <label>Available</label>
+                    <input ng-model="product.Available" type="checkbox" class="">
+                </p>
+
+                <p>
+                    <label>Description</label>
+                    <textarea ng-model="product.Description" class="form-control" rows="5"></textarea>
+                </p>
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger" ng-click="cancel()"><i class="glyphicon glyphicon-remove"></i>cancel</button>
+                    <button type="button" class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-ok"></i>Add Product</button>
+                </div>
+            </div>
+
+        </div>
+       
+    </div>
+    </section>
+
+
+
+

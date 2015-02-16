@@ -1,0 +1,50 @@
+﻿<section style="margin:50px;" class="panel panel-default table-dynamic">
+    <div class="panel-heading">
+        <strong><span class="glyphicon glyphicon-th"></span> Add New Category</strong>
+    </div>
+    
+    <div >
+        <div class="row" style="margin: 10px">
+            <div class="col-sm-6">
+
+                <img style="height: auto; width: 250px; margin-bottom: 20px" ng-src="{{dataUrls[0]}}" class="photo">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <div ng-file-select="onFileSelect($files)" data-multiple="false" title="select file"
+                             onclick="this.value = null" class="btn btn-primary" style="position: relative;">
+                           Add/Change Image<input type="file" ng-file-select="onFileSelect($files)"
+                                               data-multiple="false" title="select file" onclick="this.value = null"
+                                               class="upload-button" multiple="false"
+                                               style="top: 0px; bottom: 0px; left: 0px; right: 0px; width: 100%; opacity: 0; position: absolute;">
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <p>
+                    <label>Name</label>
+                    <input ng-model="category.Name" type="text" class="form-control">
+                </p>
+                <p>
+                    <label>Featured</label>
+                    <input ng-model="category.Featured" type="checkbox" class="form-control">
+                </p>
+                <p>
+                    <label>Description</label>
+                    <textarea ng-model="category.Description" class="form-control" rows="5"></textarea>
+                </p>
+           </div>
+            <div class="pull-right" style="">
+                <button type="button" class="btn btn-danger" ng-click="cancel()"><i class="glyphicon glyphicon-remove"></i>cancel</button>
+                <button type="button" class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-ok"></i>Add Product</button>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+
+

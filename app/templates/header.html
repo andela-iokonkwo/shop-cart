@@ -23,7 +23,7 @@
                                             </div>
                                             <h3><a href="#/products/{{product.id}}">{{product.name}}</a></h3>
                                             <div class="pi-price">{{product.price | nairacurrency}}</div>
-                                            <a href="#" ng-click="addtocart(product)" class="btn btn-default add2cart">Add to cart</a>
+                                           <add-to-cart product="product"></add-to-cart>
                                         </div>
                                     </div>
                                     <div class="row" style="text-align:center">
